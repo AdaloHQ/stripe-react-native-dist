@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.dependency 'React-Core'
   # Use Stripe 22.5 to work with Xcode 14+
   s.dependency 'Stripe', '~> 22.5'
-  s.dependency 'StripeConnections', '~> 22.5'
+  s.dependency 'StripeFinancialConnections', '~> 22.5'
 end
