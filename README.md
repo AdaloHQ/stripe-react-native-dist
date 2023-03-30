@@ -1,3 +1,24 @@
+# Adalo-specific Deployment Instructions
+
+This repository is a clone of the distributable package of [@stripe/stripe-react-native](https://github.com/stripe/stripe-react-native). It's currently used to patch official `stripe-react-native` releases to maintain compatibility with existing Adalo components and dependencies.
+
+We reference this patched component in `package.json` __by tag__, as such:
+
+```json
+"dependencies": {
+  "@stripe/stripe-react-native": "https://github.com/AdaloHQ/stripe-react-native-dist.git#tags/v0.7.1"
+}
+```
+
+Steps to publish a new version:
+
+1. Create a branch, push it, and open a PR.
+1. Get approval, squash merge with `main`.
+1. Create a new version tag on the freshly squashed `main`, i.e. `git tag -a v0.7.2 -m "new feature description, v0.7.2"`.
+1. Push the new tag, `git push origin v0.7.2`.
+1. Update package references with the new tag. For example, (see [strip-kit](https://github.com/AdaloHQ/stripe-kit)), `"@stripe/stripe-react-native": "https://github.com/AdaloHQ/stripe-react-native-dist.git#tags/v0.7.2"`
+1. Done!
+
 # Stripe React Native SDK
 
 [![npm version](https://img.shields.io/npm/v/@stripe/stripe-react-native.svg?style=flat-square)](https://www.npmjs.com/package/@stripe/stripe-react-native)
